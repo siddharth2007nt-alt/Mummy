@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>💞</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h2 style="text-align:center;">ನಿನ್ನ ಫೋಟೋ ನೋಡ್ತಿ 🕺🕺</h2>
+
+<div class="container">
+
+  <h1 id="mainQuote">ನೋಡಲು ಕೆಳಗ ಇರು ಬಟನ್ ಪ್ರೆಸ್ ಮಾಡ್ರಿ❤️</h1>
+
+  <!-- Angry Bird Photo Slider -->
+  <div id="photoBoxAb" class="photo-card" style="display:none;">
+    <img id="photoAb" class="photo">
+    <p id="quoteAb"></p>
+  </div>
+
+  <button id="abBtn">mummy🕺</button>
+
+</div>
+
+<script>
+  // Step variable
+  let stepAb = 0;
+
+  // Photo data array
+const angryBirdData = [
+  { img: "love6.jpg", text: "Selfie queen 👑" },
+  { img: "love7.jpg", text: "ಅಯ್ಯೋ ಮಹಾರಾಣಿ ಅವ್ರು🫶" },
+  { img: "love8.jpg", text: "ಪರಿಸರ ಪ್ರೇಮಿ 😝" },
+  { img: "love9.jpg", text: "ಸಾಕ್ಷಾತ್ ಲಕ್ಷ್ಮಿ ದೇವಿ 👌💕" },
+  { img: "love10.jpg", text: "Cutie 💖" }
+];
+  function showNextAb() {
+    const photoBox = document.getElementById("photoBoxAb");
+    const photo = document.getElementById("photoAb");
+    const quote = document.getElementById("quoteAb");
+    const button = document.getElementById("abBtn");
+
+    if (stepAb < angryBirdData.length) {
+      photoBox.style.display = "block";
+      photo.src = angryBirdData[stepAb].img;
+      quote.innerText = angryBirdData[stepAb].text;
+
+      stepAb++;
+
+      if (stepAb === 1) {
+        button.innerText = "Next Surprise 💌";
+      }
+
+    } else {
+      button.innerText = "Go Home 🏠";
+      button.disabled = true;
+    }
+  }
+
+  // Attach click event to button
+  document.getElementById("abBtn").addEventListener("click", showNextAb);
+
+</script>
+
+</body>
+</html>
